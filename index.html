@@ -1,0 +1,634 @@
+
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<marquee> <font size="7">CLOCK BY SAMRAJ :). </font> </marquee> <hr>
+<style type="text/css">
+/* CSS Document */
+body {
+}
+
+#wrapper {
+	width: 455px;
+margin: 30px auto;
+text-align: center;
+}
+
+.button {
+	font-family:"Myriad Pro", Arial, sans-serif;
+	font-size: 24px;
+	font-weight:bold;
+	color:#333;
+	text-decoration:none;
+	letter-spacing:-1px;
+}
+
+#shadow {
+	height:50px;
+background: -moz-radial-gradient(center, ellipse cover,  #c6c6c6 18%, #ffffff 76%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(18%,#c6c6c6), color-stop(76%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #c6c6c6 18%,#ffffff 76%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #c6c6c6 18%,#ffffff 76%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #c6c6c6 18%,#ffffff 76%); /* IE10+ */
+background: radial-gradient(center, ellipse cover,  #c6c6c6 18%,#ffffff 76%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.clock {
+display: block;
+width: 405px;
+height: 405px;
+border:3px solid #3F1B05;
+background: #8c4f39; /* Old browsers */
+background: -moz-linear-gradient(top,  #8c4f39 0%, #541f06 51%, #8c4f39 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8c4f39), color-stop(51%,#541f06), color-stop(100%,#8c4f39)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #8c4f39 0%,#541f06 51%,#8c4f39 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #8c4f39 0%,#541f06 51%,#8c4f39 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #8c4f39 0%,#541f06 51%,#8c4f39 100%); /* IE10+ */
+background: linear-gradient(top,  #8c4f39 0%,#541f06 51%,#8c4f39 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c4f39', endColorstr='#8c4f39',GradientType=0 ); /* IE6-9 */
+-moz-border-radius: 223px;
+-webkit-border-radius: 223px;
+border-radius: 223px;
+padding: 20px;
+position:relative;
+}
+
+#centerPoint{
+	width: 24px;
+	height: 24px;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	border-radius: 12px;
+	background-color: black;
+	position: absolute;
+	left: 210px;
+	top: 208px;
+}
+
+.clockhighlight1 {
+display: block;
+width: 363px;
+height: 363px;
+background: #541f06; /* Old browsers */
+background: -moz-linear-gradient(top,  #541f06 0%, #6b2c08 50%, #541f06 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#541f06), color-stop(50%,#6b2c08), color-stop(100%,#541f06)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #541f06 0%,#6b2c08 50%,#541f06 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #541f06 0%,#6b2c08 50%,#541f06 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #541f06 0%,#6b2c08 50%,#541f06 100%); /* IE10+ */
+background: linear-gradient(top,  #541f06 0%,#6b2c08 50%,#541f06 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#541f06', endColorstr='#541f06',GradientType=0 ); /* IE6-9 */
+-webkit-border-radius: 200px;
+-moz-border-radius: 200px;
+border-radius: 200px;
+border:6px solid #8c4f39;
+padding: 16px;
+}
+
+.clockface {
+display: block;
+width: 340px;
+height: 340px;
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%); /* IE10+ */
+background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+-webkit-border-radius: 180px;
+-moz-border-radius: 180px;
+border-radius: 180px;
+border:10px solid #8e8e8e;
+}
+
+.numbers {
+		position: absolute;
+		display:block;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size:32px;
+}
+
+#numberone {
+	top: 85px;
+right: 150px;
+}
+
+#numbertwo {
+	top: 135px;
+	right: 100px;
+}
+
+
+#numberthree {
+	top: 200px;
+	right: 85px;
+}
+
+#numberfour {
+	top: 265px;
+right: 100px;
+}
+
+#numberfive {
+	top: 310px;
+right: 150px;
+}
+
+#numbersix {
+top: 330px;
+right: 215px;
+}
+
+#numbereleven {
+	top: 85px;
+left: 150px;
+}
+
+#numberten {
+	top: 135px;
+left: 100px;
+}
+
+#numbereight {
+	top: 265px;
+left: 100px;
+}
+
+#numberseven {
+	top: 310px;
+left: 150px;
+}
+
+#numbernine {
+	top: 200px;
+	left: 85px;
+}
+
+#numbertwelve {
+	top: 70px;
+	right: 208px;
+}
+
+.minutes {
+		position: absolute;
+		width: 3px;
+		height: 15px;
+		top: 53px;
+		left: 220px;
+		background: #8e8e8e;
+		-webkit-transform-origin: 50% 170px;
+		-moz-transform-origin: 50% 170px;
+}
+
+.fiveminutes {
+		position: absolute;
+		width: 3px;
+		height: 25px;
+		top: 53px;
+		left: 220px;
+		background: #000;
+		-webkit-transform-origin: 50% 170px;
+		-moz-transform-origin: 50% 170px;
+}
+
+#one {
+	-webkit-transform: rotate(6deg);
+	-moz-transform: rotate(6deg);
+}
+#two {
+	-webkit-transform: rotate(12deg);
+	-moz-transform: rotate(12deg);
+}
+#three {
+	-webkit-transform: rotate(18deg);
+	-moz-transform: rotate(18deg);
+}
+#four {
+	-webkit-transform: rotate(24deg);
+	-moz-transform: rotate(24deg);
+}
+
+#five {
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+#six {
+	-webkit-transform: rotate(36deg);
+	-moz-transform: rotate(36deg);
+}
+#seven {
+	-webkit-transform: rotate(42deg);
+	-moz-transform: rotate(42deg);
+}
+#eight {
+	-webkit-transform: rotate(48deg);
+	-moz-transform: rotate(48deg);
+}
+#nine {
+	-webkit-transform: rotate(54deg);
+	-moz-transform: rotate(54deg);
+}
+
+#ten {
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+}
+
+#eleven {
+	-webkit-transform: rotate(66deg);
+	-moz-transform: rotate(66deg);
+}
+#twelve {
+	-webkit-transform: rotate(72deg);
+	-moz-transform: rotate(72deg);
+}
+#thirteen {
+	-webkit-transform: rotate(78deg);
+	-moz-transform: rotate(78deg);
+}
+#fourteen {
+	-webkit-transform: rotate(84deg);
+	-moz-transform: rotate(84deg);
+}
+
+#fifteen {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+}
+
+#sixteen {
+	-webkit-transform: rotate(96deg);
+	-moz-transform: rotate(96deg);
+}
+#seventeen {
+	-webkit-transform: rotate(102deg);
+	-moz-transform: rotate(102deg);
+}
+#eighteen {
+	-webkit-transform: rotate(108deg);
+	-moz-transform: rotate(108deg);
+}
+#nineteen {
+	-webkit-transform: rotate(114deg);
+	-moz-transform: rotate(114deg);
+}
+
+#twenty {
+	-webkit-transform: rotate(120deg);
+	-moz-transform: rotate(120deg);
+}
+
+#twentyone {
+	-webkit-transform: rotate(126deg);
+	-moz-transform: rotate(126deg);
+}
+#twentytwo {
+	-webkit-transform: rotate(132deg);
+	-moz-transform: rotate(132deg);
+}
+#twentythree {
+	-webkit-transform: rotate(138deg);
+	-moz-transform: rotate(138deg);
+}
+#twentyfour {
+	-webkit-transform: rotate(144deg);
+	-moz-transform: rotate(144deg);
+}
+
+#twentyfive {
+	-webkit-transform: rotate(150deg);
+	-moz-transform: rotate(150deg);
+}
+
+#twentysix {
+	-webkit-transform: rotate(156deg);
+	-moz-transform: rotate(156deg);
+}
+#twentyseven {
+	-webkit-transform: rotate(162deg);
+	-moz-transform: rotate(162deg);
+}
+#twentyeight {
+	-webkit-transform: rotate(168deg);
+	-moz-transform: rotate(168deg);
+}
+#twentynine {
+	-webkit-transform: rotate(174deg);
+	-moz-transform: rotate(174deg);
+}
+
+#thirty {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+}
+
+#thirtyone {
+	-webkit-transform: rotate(186deg);
+	-moz-transform: rotate(186deg);
+}
+#thirtytwo {
+	-webkit-transform: rotate(192deg);
+	-moz-transform: rotate(192deg);
+}
+#thirtythree {
+	-webkit-transform: rotate(198deg);
+	-moz-transform: rotate(198deg);
+}
+
+#thirtyfour {
+	-webkit-transform: rotate(204deg);
+	-moz-transform: rotate(204deg);
+}
+
+#thirtyfive {
+	-webkit-transform: rotate(210deg);
+	-moz-transform: rotate(210deg);
+}
+#thirtysix {
+	-webkit-transform: rotate(216deg);
+	-moz-transform: rotate(216deg);
+}
+#thirtyseven {
+	-webkit-transform: rotate(222deg);
+	-moz-transform: rotate(222deg);
+}
+#thirtyeight {
+	-webkit-transform: rotate(228deg);
+	-moz-transform: rotate(228deg);
+}
+#thirtynine {
+	-webkit-transform: rotate(234deg);
+	-moz-transform: rotate(234deg);
+}
+#fourty {
+	-webkit-transform: rotate(240deg);
+	-moz-transform: rotate(240deg);
+}
+
+#fourtyone {
+	-webkit-transform: rotate(246deg);
+	-moz-transform: rotate(246deg);
+}
+
+#fourtytwo {
+	-webkit-transform: rotate(252deg);
+	-moz-transform: rotate(252deg);
+}
+#fourtythree {
+	-webkit-transform: rotate(258deg);
+	-moz-transform: rotate(258deg);
+}
+
+#fourtyfour {
+	-webkit-transform: rotate(264deg);
+	-moz-transform: rotate(264deg);
+}
+
+#fourtyfive {
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+}
+
+#fourtysix {
+	-webkit-transform: rotate(276deg);
+	-moz-transform: rotate(276deg);
+}
+#fourtyseven {
+	-webkit-transform: rotate(282deg);
+	-moz-transform: rotate(282deg);
+}
+#fourtyeight {
+	-webkit-transform: rotate(288deg);
+	-moz-transform: rotate(288deg);
+}
+#fourtynine {
+	-webkit-transform: rotate(294deg);
+	-moz-transform: rotate(294deg);
+}
+
+#fifty {
+	-webkit-transform: rotate(300deg);
+	-moz-transform: rotate(300deg);
+}
+
+#fiftyone {
+	-webkit-transform: rotate(306deg);
+	-moz-transform: rotate(306deg);
+}
+
+#fiftytwo {
+	-webkit-transform: rotate(312deg);
+	-moz-transform: rotate(312deg);
+}
+#fiftythree {
+	-webkit-transform: rotate(318deg);
+	-moz-transform: rotate(318deg);
+}
+
+#fiftyfour {
+	-webkit-transform: rotate(324deg);
+	-moz-transform: rotate(324deg);
+}
+
+#fiftyfive {
+	-webkit-transform: rotate(330deg);
+	-moz-transform: rotate(330deg);
+}
+
+#fiftysix {
+	-webkit-transform: rotate(336deg);
+	-moz-transform: rotate(336deg);
+}
+#fiftyseven {
+	-webkit-transform: rotate(342deg);
+	-moz-transform: rotate(342deg);
+}
+#fiftyeight {
+	-webkit-transform: rotate(348deg);
+	-moz-transform: rotate(348deg);
+}
+#fiftynine {
+	-webkit-transform: rotate(354deg);
+	-moz-transform: rotate(354deg);
+}
+
+#sixty {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+}
+
+#minhand {
+		position: absolute;
+		width: 8px;
+		height: 160px;
+		top: 90px;
+		left: 218px;
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 5px;
+		border-radius: 7px;
+		background: black;
+		-webkit-transform-origin: 50% 131px;
+		-moz-transform-origin: 50% 131px;
+}
+
+#hourhand {
+		position: absolute;
+		width: 8px;
+		height: 130px;
+		top: 120px;
+		left: 218px;
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 5px;
+		border-radius: 7px;
+		background: #000;
+		-webkit-transform-origin: 50% 100px;
+		-moz-transform-origin: 50% 100px;
+}
+
+#sechand {
+		position: absolute;
+		width: 4px;
+		height: 160px;
+		top: 90px;
+		left: 220px;
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 5px;
+		border-radius: 7px;
+		background: red;
+		-webkit-transform-origin: 50% 131px;
+		-moz-transform-origin: 50% 131px;
+}
+</style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="clock">
+    	<div class="clockhighlight1">
+      	<div class="clockface">
+        <div class="fiveminutes" id="sixty"></div>
+        <div class="minutes" id="one"></div>
+        <div class="minutes" id="two"></div>
+        <div class="minutes" id="three"></div>
+        <div class="minutes" id="four"></div>
+        <div class="fiveminutes" id="five"></div>
+        <div class="minutes" id="six"></div>
+        <div class="minutes" id="seven"></div>
+        <div class="minutes" id="eight"></div>
+        <div class="minutes" id="nine"></div>
+        <div class="fiveminutes" id="ten"></div>
+       <div class="minutes" id="eleven"></div>
+        <div class="minutes" id="twelve"></div>
+        <div class="minutes" id="thirteen"></div>
+        <div class="minutes" id="fourteen"></div>
+        <div class="fiveminutes" id="fifteen"></div>
+        <div class="minutes" id="sixteen"></div>
+        <div class="minutes" id="seventeen"></div>
+        <div class="minutes" id="eighteen"></div>
+        <div class="minutes" id="nineteen"></div>
+        <div class="fiveminutes" id="twenty"></div>
+        <div class="minutes" id="twentyone"></div>
+        <div class="minutes" id="twentytwo"></div>
+        <div class="minutes" id="twentythree"></div>
+        <div class="minutes" id="twentyfour"></div>
+        <div class="fiveminutes" id="twentyfive"></div>
+        <div class="minutes" id="twentysix"></div>
+        <div class="minutes" id="twentyseven"></div>
+        <div class="minutes" id="twentyeight"></div>
+        <div class="minutes" id="twentynine"></div>
+        <div class="fiveminutes" id="thirty"></div>
+        <div class="minutes" id="thirtyone"></div>
+        <div class="minutes" id="thirtytwo"></div>
+        <div class="minutes" id="thirtythree"></div>
+        <div class="minutes" id="thirtyfour"></div>
+        <div class="fiveminutes" id="thirtyfive"></div>
+        <div class="minutes" id="thirtysix"></div>
+        <div class="minutes" id="thirtyseven"></div>
+        <div class="minutes" id="thirtyeight"></div>
+        <div class="minutes" id="thirtynine"></div>
+        <div class="fiveminutes" id="fourty"></div>
+        <div class="minutes" id="fourtyone"></div>
+        <div class="minutes" id="fourtytwo"></div>
+        <div class="minutes" id="fourtythree"></div>
+        <div class="minutes" id="fourtyfour"></div>
+        <div class="fiveminutes" id="fourtyfive"></div>
+        <div class="minutes" id="fourtysix"></div>
+        <div class="minutes" id="fourtyseven"></div>
+        <div class="minutes" id="fourtyeight"></div>
+        <div class="minutes" id="fourtynine"></div>
+        <div class="fiveminutes" id="fifty"></div>
+        <div class="minutes" id="fiftyone"></div>
+        <div class="minutes" id="fiftytwo"></div>
+        <div class="minutes" id="fiftythree"></div>
+        <div class="minutes" id="fiftyfour"></div>
+        <div class="fiveminutes" id="fiftyfive"></div>
+        <div class="minutes" id="fiftysix"></div>
+        <div class="minutes" id="fiftyseven"></div>
+        <div class="minutes" id="fiftyeight"></div>
+        <div class="minutes" id="fiftynine"></div>
+        <div class="numbers" id="numbertwelve">12</div>
+        <div class="numbers" id="numberone">1</div>
+        <div class="numbers" id="numbertwo">2</div>
+        <div class="numbers" id="numberthree">3</div>
+        <div class="numbers" id="numberfour">4</div>
+        <div class="numbers" id="numberfive">5</div>
+        <div class="numbers" id="numbersix">6</div>
+        <div class="numbers" id="numberseven">7</div>
+        <div class="numbers" id="numbereight">8</div>
+        <div class="numbers" id="numbernine">9</div>
+        <div class="numbers" id="numberten">10</div>
+        <div class="numbers" id="numbereleven">11</div>
+        <div id="hourhand"></div>
+        <div id="sechand"></div>
+      	<div id="minhand"></div>
+        <div id="centerPoint"></div>
+       </div>
+    </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" language="javascript"></script>
+  <script language="javascript">
+	$(document).ready(function() {
+     	var timer=setInterval("getTime()",1000);
+});
+
+		 function getTime() {
+			var d = new Date();
+			var hours = d.getHours();
+			var minute = d.getMinutes();
+			var seconds = d.getSeconds();	
+			var hourRotate;
+			var minRotate;
+			var secRotate;
+			
+				hours = ((hours > 12) ? hours - 12 : hours);
+				if (minute === 0){
+					minRotate = 0;
+				}else{
+					minRotate = minute*6;
+				}
+				if (seconds === 0){
+					secRotate = 0;
+				}else{
+					secRotate = seconds*6;
+				}
+				if (hours === 12){
+					hourRotate = 0;
+				}else{
+					hourRotate = (hours*30) + (minute/2) ;
+					
+				}
+			 //document.write( hourRotate + ":" + minRotate +  ":" + secRotate);
+			 var srotate = "rotate(" + secRotate + "deg)";
+      $("#sechand").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
+			 var hrotate = "rotate(" + hourRotate + "deg)";
+      $("#hourhand").css({"-moz-transform" : hrotate, "-webkit-transform" : hrotate});
+			 var mrotate = "rotate(" + minRotate + "deg)";
+      $("#minhand").css({"-moz-transform" : mrotate, "-webkit-transform" : mrotate});
+		}
+</script>
+
+</body>
